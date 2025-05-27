@@ -41,6 +41,13 @@ android {
 }
 
 dependencies {
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.runtime.ktx)
+    implementation (libs.kotlinx.coroutines.android)
+    implementation (libs.androidx.activity.ktx)
+
+    implementation(libs.firebase.auth)
+
     implementation(platform(libs.firebase.bom))
 
     implementation(libs.firebase.analytics)
