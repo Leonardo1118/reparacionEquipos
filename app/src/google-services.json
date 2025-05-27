@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "511971725437",
+    "firebase_url": "https://reparaequipo-32c84-default-rtdb.firebaseio.com",
+    "project_id": "reparaequipo-32c84",
+    "storage_bucket": "reparaequipo-32c84.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511971725437:android:24f2072ed916b1f76c2114",
+        "android_client_info": {
+          "package_name": "com.example.reparacionequipos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmdiEaVfNC-Mn8VJuvEHlBG0H7rIlByBA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

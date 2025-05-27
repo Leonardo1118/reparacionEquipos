@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ReparacionEquipos</string>
+    <string name="logo_reparacion">logo</string>
+    <string name="ingresar" >ingresar</string>
+    <string name="ingresar_email">Ingresa email</string>
+    <string name="ingresar_password">Ingresa password</string>
+
+    <string name="salir">salir</string>
 </resources>
