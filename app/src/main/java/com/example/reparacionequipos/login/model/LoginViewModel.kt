@@ -28,13 +28,18 @@ class LoginViewModel(
             if (loginResult.isSuccess) {
                 _loginState.value = LoginState.Success
                 val uid = repository.getCurrentUserUid()
+                println("🔥 Recibido uid: $uid") // LOG
                 if (uid != null) {
-                    val roleResult = repository.getUserRole(uid)
-                    if (roleResult.isSuccess) {
-                        val rol = roleResult.getOrNull() ?: ""
-                        _loginState.value = LoginState.LoggedInUser(uid, rol)
+                    val infoResult = repository.getUserInfo(uid)
+                    if (infoResult.isSuccess) {
+                        val info = infoResult.getOrNull()
+                        if (info != null) {
+                            _loginState.value = LoginState.LoggedInUser(uid, info.rol, info.nombre , info.email)
+                        } else {
+                            _loginState.value = LoginState.Error("No se encontró la información del usuario")
+                        }
                     } else {
-                        _loginState.value = LoginState.Error(roleResult.exceptionOrNull()?.message ?: "Error al obtener el rol")
+                        _loginState.value = LoginState.Error(infoResult.exceptionOrNull()?.message ?: "Error al obtener el rol")
                     }
                 } else {
                     _loginState.value = LoginState.Error("No se pudo obtener el UID")

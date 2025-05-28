@@ -10,6 +10,7 @@ import com.example.reparacionequipos.databinding.ActivityPanelAdminBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.example.reparacionequipos.R
+import com.example.reparacionequipos.admin.ui.cuenta.cuentaAdmin
 
 class PanelAdmin : AppCompatActivity() {
     private lateinit var binding: ActivityPanelAdminBinding
@@ -65,7 +66,7 @@ class PanelAdmin : AppCompatActivity() {
                 }
                 R.id.Menu_cuenta ->{
                     if (currentFragmentTag != "Fragments cuenta") {
-                       // verFragmentoCuenta()
+                       verFragmentoCuenta()
                     }
                     true
                 }
@@ -93,17 +94,19 @@ class PanelAdmin : AppCompatActivity() {
         currentFragmentTag = "Fragments Tecnico"
 
     }
-/*
+
     private fun verFragmentoCuenta(){
         val nombre_titulo= "MI CUENTA"
         TITULO.text = nombre_titulo
-        val fragment = locutor_cuenta()
+        val fragment = cuentaAdmin()
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(binding.FragmentsAdmin.id, fragment, "Fragments cuenta")
         transaction.commit()
         currentFragmentTag = "Fragments cuenta"
 
     }
+
+    /*
 
     private fun verFragmentoPrograma(){
         val nombre_titulo= "PROGRAMA"

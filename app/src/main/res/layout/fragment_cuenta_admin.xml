@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".admin.ui.cuenta.cuentaAdmin"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardUserInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardBackgroundColor="@color/primary"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <TextView
+                android:id="@+id/tvUserNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre:"
+                android:textColor="@color/color_textosHINT"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/user_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="16dp"
+                android:autoSizeMinTextSize="14dp"
+                android:autoSizeTextType="uniform"
+                android:text=""
+                android:textColor="@color/color_2"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="2dp"
+                android:background="@color/color_2" />
+
+
+            <TextView
+                android:id="@+id/tvUserEmailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Email:"
+                android:textColor="@color/color_textosHINT"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/email_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="16dp"
+                android:autoSizeMinTextSize="14dp"
+                android:autoSizeTextType="uniform"
+                android:text=""
+                android:textColor="@color/color_2"
+                android:textStyle="bold"
+                tools:ignore="UnusedAttribute" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="2dp"
+                android:background="@color/color_2"
+                tools:ignore="ObsoleteLayoutParam" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Rol"
+                android:textColor="@color/color_textosHINT"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/rol_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="16dp"
+                android:autoSizeMinTextSize="14dp"
+                android:autoSizeTextType="uniform"
+                android:text=""
+                android:textColor="@color/color_2"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="2dp"
+                android:background="@color/color_2" />
+
+
+
+
+            <TextView
+                android:id="@+id/registro_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="16dp"
+                android:autoSizeMinTextSize="14dp"
+                android:autoSizeTextType="uniform"
+                android:textColor="@color/color_2"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardCerrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        app:cardBackgroundColor="@color/color_botones"
+        app:contentPadding="10dp">
+
+        <TextView
+            android:id="@+id/cerrarSesionoyente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:drawablePadding="5dp"
+            android:text="@string/cierre"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+
+            android:textStyle="bold"
+
+            app:drawableEndCompat="@drawable/ic_cerrarsesion">
+
+        </TextView>
+
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>
+
+

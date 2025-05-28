@@ -10,6 +10,8 @@
     <color name="color_2">#003C43</color>
     <color name="color3">#EEF7FF</color>
     <color name="color_botones">#0ADF71</color>
+    <color name="primary">#E3FEF7</color>
+    <color name="color_textosHINT">#749592</color>
 
     <color name="correcto" >#B2FFAD</color>
     <color name="incorrecto" >#FF5555</color>

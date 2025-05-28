@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewbinding.ViewBinding
+
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.reparacionequipos.admin.PanelAdmin
@@ -51,32 +51,23 @@ class MainActivity : AppCompatActivity() {
                 when (state) {
                     is LoginState.Idle -> {}
                     is LoginState.Loading -> {
-                        // Mostrar loader si querés
                     }
                     is LoginState.Success -> {//aqui no se hace nada
                         Toast.makeText(this@MainActivity,"Correcto", Toast.LENGTH_SHORT).show()
-
-
-
                     }
                     is LoginState.Error -> {
                         Toast.makeText(this@MainActivity,state.message, Toast.LENGTH_SHORT).show()
                         email.text?.clear()
                         password.text?.clear()
                     }
-
                     is LoginState.LoggedInUser -> {
                         val rol = state.rol
-                        // Aquí podés redirigir según el rol
+
                         if (rol == "administrador") {
                             val dir = Intent(this@MainActivity, PanelAdmin::class.java)
                             startActivity(dir)
                             finishAffinity()
                         }
-
-
-
-
                     }
                 }
             }
