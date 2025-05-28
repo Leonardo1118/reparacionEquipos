@@ -24,12 +24,25 @@ class LoginViewModel(
         _loginState.value = LoginState.Loading
 
         viewModelScope.launch {
-            val result = repository.login(email, password)
-            _loginState.value = if (result.isSuccess) {
-                LoginState.Success
+            val loginResult = repository.login(email, password)
+            if (loginResult.isSuccess) {
+                _loginState.value = LoginState.Success
+                val uid = repository.getCurrentUserUid()
+                if (uid != null) {
+                    val roleResult = repository.getUserRole(uid)
+                    if (roleResult.isSuccess) {
+                        val rol = roleResult.getOrNull() ?: ""
+                        _loginState.value = LoginState.LoggedInUser(uid, rol)
+                    } else {
+                        _loginState.value = LoginState.Error(roleResult.exceptionOrNull()?.message ?: "Error al obtener el rol")
+                    }
+                } else {
+                    _loginState.value = LoginState.Error("No se pudo obtener el UID")
+                }
             } else {
-                LoginState.Error(result.exceptionOrNull()?.message ?: "Error desconocido")
+                _loginState.value = LoginState.Error("credenciales invalidas")
             }
         }
     }
+
 }

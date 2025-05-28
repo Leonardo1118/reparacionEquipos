@@ -2,6 +2,7 @@ package com.example.reparacionequipos.login.data
 
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
 
 class AuthRepository(
@@ -19,5 +20,30 @@ class AuthRepository(
             Result.failure(e)
         }
     }
+  //funcion para obtener el uid del usuaro en sesion
+    fun getCurrentUserUid(): String? {
+        return auth.currentUser?.uid
+    }
+
+    suspend fun getUserRole(uid: String): Result<String> {
+        return try {
+            val snapshot = FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(uid)
+                .get()
+                .await()
+
+            val rol = snapshot.getString("rol")
+            if (rol != null) {
+                Result.success(rol)
+            } else {
+                Result.failure(Exception("El rol no está definido"))
+            }
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+
 
 }

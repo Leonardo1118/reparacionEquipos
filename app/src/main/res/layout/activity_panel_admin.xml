@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.PanelAdmin">
+
+
+    <RelativeLayout
+        android:id="@+id/tollbar_Admin"
+        android:background="@color/color_textos"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:id="@+id/Titulo_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/TituloPanelAdmin"
+            android:textColor="@color/color_2"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:background="@color/color_2"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/Fragments_Admin"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/tollbar_Admin"
+        android:layout_above="@id/menu_admin"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/menu_admin"
+        android:layout_width="match_parent"
+        android:background="@color/color_textos"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_dash_admin"
+        app:itemTextColor="@color/color_2"
+        app:itemRippleColor="@color/color3"
+
+        app:itemTextAppearanceActiveBoldEnabled="true"
+
+
+        app:labelVisibilityMode="labeled"/>
+
+
+</RelativeLayout>

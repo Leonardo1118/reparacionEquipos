@@ -6,6 +6,10 @@
     <color name="azul" >#172554</color>
     <color name="gris" >#A0A0A0</color>
     <color name="amarillo" >#FFEB3B</color>
+    <color name="color_textos">#009688</color>
+    <color name="color_2">#003C43</color>
+    <color name="color3">#EEF7FF</color>
+    <color name="color_botones">#0ADF71</color>
 
     <color name="correcto" >#B2FFAD</color>
     <color name="incorrecto" >#FF5555</color>

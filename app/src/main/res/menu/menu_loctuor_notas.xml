@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/Menu_crearNota"
+        android:title="CREAR NOTA "
+        android:icon="@drawable/ic_anadir"
+        />
+
+    <item
+        android:id="@+id/Menu_programa"
+        android:title="PROGRAMA"
+        android:icon="@drawable/ic_dahsboard"
+
+
+        />
+
+
+    <item
+        android:id="@+id/Menu_cuenta"
+
+        android:title="@string/menu_cuenta"
+        android:icon="@drawable/ic_account"
+
+        />
+
+
+
+
+</menu>

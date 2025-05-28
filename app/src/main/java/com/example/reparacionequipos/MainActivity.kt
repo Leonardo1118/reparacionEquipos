@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.example.reparacionequipos.admin.PanelAdmin
 
 
 import com.example.reparacionequipos.databinding.ActivityMainBinding
@@ -36,9 +37,9 @@ class MainActivity : AppCompatActivity() {
         btn_exit = binding.btnSalir
 
         btn_login.setOnClickListener {
-            val email = email.text.toString()
-            val password = password.text.toString()
-            loginViewModel.login(email, password)
+            val emailStr = email.text.toString()
+            val passwordStr = password.text.toString()
+            loginViewModel.login(emailStr, passwordStr)
         }
 
         observarLogin()
@@ -52,14 +53,30 @@ class MainActivity : AppCompatActivity() {
                     is LoginState.Loading -> {
                         // Mostrar loader si querés
                     }
-                    is LoginState.Success -> {
-                        // Redirigir al home
-                        Toast.makeText(this@MainActivity, "correcto", Toast.LENGTH_SHORT).show()
-                        //startActivity(Intent(this@MainActivity, HomeActivity::class.java))
-                        //finish()
+                    is LoginState.Success -> {//aqui no se hace nada
+                        Toast.makeText(this@MainActivity,"Correcto", Toast.LENGTH_SHORT).show()
+
+
+
                     }
                     is LoginState.Error -> {
-                        Toast.makeText(this@MainActivity, state.message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MainActivity,state.message, Toast.LENGTH_SHORT).show()
+                        email.text?.clear()
+                        password.text?.clear()
+                    }
+
+                    is LoginState.LoggedInUser -> {
+                        val rol = state.rol
+                        // Aquí podés redirigir según el rol
+                        if (rol == "administrador") {
+                            val dir = Intent(this@MainActivity, PanelAdmin::class.java)
+                            startActivity(dir)
+                            finishAffinity()
+                        }
+
+
+
+
                     }
                 }
             }

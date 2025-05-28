@@ -1,9 +1,19 @@
 <resources>
     <string name="app_name">ReparacionEquipos</string>
     <string name="logo_reparacion">logo</string>
-    <string name="ingresar" >ingresar</string>
+    <string name="ingresar">ingresar</string>
     <string name="ingresar_email">Ingresa email</string>
     <string name="ingresar_password">Ingresa password</string>
+    <string name="TituloPanelAdmin">TITULO</string>
 
     <string name="salir">salir</string>
+
+    <string name="menu_panel">NOTICIAS</string>
+    <string name="menu_cuenta">CUENTA</string>
+    <string name="Titulo_RL">TITULO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cierre">CERRAR SESION</string>
+    <string name="tecnicos">TECNICOS</string>
+    <string name="categoria">CATEGORIA</string>
 </resources>
